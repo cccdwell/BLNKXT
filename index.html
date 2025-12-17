@@ -235,9 +235,16 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr;
             gap: 1px;
             background: var(--dim);
+        }
+
+        /* Only show all 6 cards in a row when there's enough space */
+        @media (min-width: 1400px) {
+            .services-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
         }
 
         .service-card {
